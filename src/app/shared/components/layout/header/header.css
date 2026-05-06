@@ -1,7 +1,12 @@
 .header {
   width: 100%;
-  border-bottom: 1px solid var(--border-color);
-  background-color: var(--bg-color);
+  border-bottom: var(--border-glass);
+  background-color: var(--glass);
+  backdrop-filter: blur(12px); /* Magia pura de CSS! */
+  -webkit-backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 .header-content {
   display: flex;
@@ -22,7 +27,22 @@
   color: var(--text-muted);
   font-weight: 500;
   font-size: 0.95rem;
+  position: relative;
+  text-decoration: none;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--primary);
+  transition: width var(--transition);
 }
 .nav-links a:hover {
   color: var(--primary);
+}
+.nav-links a:hover::after {
+  width: 100%;
 }

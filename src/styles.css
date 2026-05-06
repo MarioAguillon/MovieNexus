@@ -8,40 +8,36 @@
 
 /* ---------- Design Tokens ---------- */
 :root {
-  /* Backgrounds */
-  --bg-color:      #0f172a;
-  --bg-surface:    #1e293b;
-  --bg-card:       #1e293bee;
-  --bg-glass:      rgba(30, 41, 59, 0.65);
+  /* Colores Core (Premium Obsidian & Neon) */
+  --bg-color: #050505;       /* Fondo más profundo */
+  --bg-accent: #111111;
+  --primary: #00f2fe;        /* Electric Cyan */
+  --primary-glow: rgba(0, 242, 254, 0.3);
+  --accent: #fe0979;         /* Neon Pink */
 
-  /* Brand */
-  --primary:       #38bdf8;
-  --primary-hover: #7dd3fc;
-  --primary-glow:  rgba(56, 189, 248, 0.25);
-  --accent:        #f43f5e;
-  --accent-hover:  #fb7185;
+  /* Gradientes Premium */
+  --grad-main: linear-gradient(135deg, var(--primary), #4facfe);
+  --grad-surface: linear-gradient(to bottom, rgba(255,255,255,0.05), transparent);
 
-  /* Text */
-  --text-main:     #f8fafc;
-  --text-muted:    #94a3b8;
-  --text-dim:      #64748b;
+  /* Espaciado y Radio (Consistencia) */
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --radius-lg: 16px;
 
-  /* Borders & Misc */
-  --border-color:  rgba(148, 163, 184, 0.12);
-  --radius:        12px;
-  --radius-sm:     8px;
-  --radius-lg:     20px;
-  --radius-full:   9999px;
+  /* Profundidad */
+  --glass: rgba(5, 5, 5, 0.7);
+  --border-glass: 1px solid rgba(255, 255, 255, 0.1);
 
-  /* Shadows */
-  --shadow-sm:     0 2px 8px  rgba(0, 0, 0, 0.25);
-  --shadow-md:     0 4px 16px rgba(0, 0, 0, 0.35);
-  --shadow-lg:     0 8px 32px rgba(0, 0, 0, 0.45);
-  --shadow-glow:   0 0 20px var(--primary-glow);
-
-  /* Transitions */
-  --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);
-  --duration:      0.3s;
+  /* --- Variables adicionales de seguridad --- */
+  --transition: 0.3s ease;
+  --radius: 12px;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --bg-surface: #111111;
+  --bg-card: #151515;
 }
 
 /* ---------- Reset & Base ---------- */
@@ -249,4 +245,26 @@ ul, ol {
   .section-title {
     font-size: 1.35rem;
   }
+}
+
+/* ---------- Botón Premium (Día 3) ---------- */
+.btn-premium {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.8rem;
+  background: var(--grad-main); /* Usamos el gradiente que definimos en :root */
+  color: white;
+  font-weight: 600;
+  border-radius: var(--radius); /* Bordes redondeados consistentes */
+  border: none;
+  cursor: pointer;
+  transition: var(--transition); /* ¡Crucial para que el brillo no sea brusco! */
+  box-shadow: 0 4px 15px var(--primary-glow); /* Sombra inicial sutil */
+}
+
+.btn-premium:hover {
+  transform: translateY(-2px); /* El botón "salta" hacia el usuario */
+  box-shadow: 0 8px 25px var(--primary-glow); /* La sombra crece y brilla más */
+  filter: brightness(1.1); /* El color se aclara ligeramente */
 }
