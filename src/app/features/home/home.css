@@ -1,29 +1,14 @@
-.hero-section {
-  text-align: center;
-  padding: 4rem 1rem;
-  max-width: 1000px;
-  margin: 0 auto;
+/* Home Page — Estilos del contenedor */
+:host {
+  display: block;
+  width: 100%;
 }
-.hero-title {
-  font-size: 3.2rem;
-  font-weight: 900;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
-  white-space: nowrap;
-}
-.gradient-text {
-  background: linear-gradient(135deg, var(--accent), var(--primary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.hero-subtitle {
-  font-size: 1.1rem;
-  color: var(--text-muted);
-  margin-bottom: 2.5rem;
-  line-height: 1.6;
-}
-.hero-actions {
+
+.loading-hero {
   display: flex;
+  align-items: center;
   justify-content: center;
+  height: 85vh;
+  font-size: 1.2rem;
+  color: var(--text-muted);
 }

@@ -269,3 +269,25 @@ ul, ol {
   box-shadow: 0 6px 20px var(--primary-glow); /* La sombra crece y brilla más */
   filter: brightness(1.05); /* El color se aclara ligeramente */
 }
+
+/* ---------- Botón Outline (Secundario) ---------- */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  font-size: 1.15rem;
+  background: transparent;
+  color: white;
+  font-weight: 600;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}

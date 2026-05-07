@@ -1,12 +1,12 @@
-<section class="hero-section">
-  <h1 class="hero-title gradient-text animate-fade-in-up">
-    Bienvenido a MovieNexus
-  </h1>
-  <p class="hero-subtitle animate-fade-in-up" style="animation-delay: 0.1s;">
-    Explora las películas más populares, busca tus favoritas y mantente<br/>al día con los últimos estrenos.
-  </p>
-  
-  <div class="hero-actions animate-fade-in-up stagger" style="margin-top: 2rem;">
-    <button class="btn-premium">Empezar a Explorar</button>
-  </div>
-</section>
+<!-- Verificamos si ya llegó la información de la API  usando el control flow-->
+
+@if (featuredMovie(); as movie) {
+
+<!-- Padre (Home) pasándole la variable 'movie' al hijo (Hero)  -->
+<app-hero [movie]="movie"></app-hero>
+} @else {
+
+<!--Mientras llega la información, mostramos u estado de carga (Skeleton)-->
+
+<div class="loading-hero">Cargando...</div>
+}
