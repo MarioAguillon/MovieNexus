@@ -35,10 +35,8 @@
     position: relative;
     z-index: 2;
     /* Debe estar por encima del overlay */
-    padding: var(--spacing-lg) var(--spacing-md);
+    padding: var(--spacing-lg) 4%;
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .hero-info {
