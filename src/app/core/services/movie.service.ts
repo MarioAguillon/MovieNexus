@@ -14,4 +14,9 @@ export class MovieService {
       `${this.apiUrl}/trending/movie/day`
     );
   }
+
+  // NUEVO METODO //
+  getPopularMovies() {
+    return this.http.get<MovieResponse>(`${this.apiUrl}/movie/popular`);
+  }
 }
