@@ -2,9 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { Movie, MovieResponse } from '../models/movie.model';
+import { CreditsResponse } from '../models/cast.model';
 
 @Injectable({ providedIn: 'root' })   // Disponible en toda la app
 export class MovieService {
+  getMovieCredits(id: string | number) {
+    return this.http.get<CreditsResponse>
+      (`${this.apiUrl}/movie/${id}/credits`);
+  }
   private http = inject(HttpClient);   // Inyectamos el motor HTTP
   private apiUrl = environment.baseUrl;
 
