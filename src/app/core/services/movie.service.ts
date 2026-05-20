@@ -28,4 +28,11 @@ export class MovieService {
   getMovieById(id: string | number) {
     return this.http.get<Movie>(`${this.apiUrl}/movie/${id}`);
   }
+
+  searchMovies(query: string) {
+    return this.http.get<MovieResponse>(
+      `${this.apiUrl}/search/movie`, {
+        params: { query }
+      });
+  }
 }
