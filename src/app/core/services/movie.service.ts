@@ -20,9 +20,13 @@ export class MovieService {
     );
   }
 
-  // NUEVO METODO //
-  getPopularMovies() {
-    return this.http.get<MovieResponse>(`${this.apiUrl}/movie/popular`);
+  /**
+   * Obtiene las películas populares con soporte para paginación.
+   */
+  getPopularMovies(page: number = 1) {
+    return this.http.get<MovieResponse>(`${this.apiUrl}/movie/popular`, {
+      params: { page: page.toString() }
+    });
   }
 
   getMovieById(id: string | number) {
@@ -34,5 +38,15 @@ export class MovieService {
       `${this.apiUrl}/search/movie`, {
         params: { query }
       });
+  }
+
+  /**
+   * Obtiene los videos (tráilers, teasers, etc.) de una película.
+   * @param id ID de la película en TMDB
+   */
+  getMovieVideos(id: string | number) {
+    return this.http.get<{ results: Array<{ key: string; site: string; type: string; name: string }> }>(
+      `${this.apiUrl}/movie/${id}/videos`
+    );
   }
 }
