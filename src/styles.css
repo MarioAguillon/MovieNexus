@@ -9,15 +9,20 @@
 /* ---------- Design Tokens ---------- */
 :root {
   /* Colores Core (Premium Obsidian & Neon) */
-  --bg-color: #050505;       /* Fondo más profundo */
+  --bg-color: #050505;
+  /* Fondo más profundo */
   --bg-accent: #111111;
-  --primary: #0ea5e9;        /* Azul profesional, menos neón */
-  --primary-glow: rgba(14, 165, 233, 0.1); /* Resplandor muy sutil */
-  --accent: #e11d48;         /* Rosa elegante */
+  --primary: #0ea5e9;
+  /* Azul profesional, menos neón */
+  --primary-glow: rgba(14, 165, 233, 0.1);
+  /* Resplandor muy sutil */
+  --accent: #e11d48;
+  /* Rosa elegante */
 
   /* Gradientes Premium */
-  --grad-main: linear-gradient(135deg, #0284c7, #0ea5e9); /* Gradiente más oscuro y sofisticado */
-  --grad-surface: linear-gradient(to bottom, rgba(255,255,255,0.05), transparent);
+  --grad-main: linear-gradient(135deg, #0284c7, #0ea5e9);
+  /* Gradiente más oscuro y sofisticado */
+  --grad-surface: linear-gradient(to bottom, rgba(255, 255, 255, 0.05), transparent);
 
   /* Espaciado y Radio (Consistencia) */
   --spacing-sm: 0.5rem;
@@ -87,7 +92,8 @@ button {
   outline: none;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -187,6 +193,7 @@ ul, ol {
     opacity: 0;
     transform: translateY(24px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -194,13 +201,23 @@ ul, ol {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes shimmer {
-  0%   { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 .animate-fade-in-up {
@@ -212,25 +229,52 @@ ul, ol {
 }
 
 /* Stagger children animations */
-.stagger > *:nth-child(1)  { animation-delay: 0.05s; }
-.stagger > *:nth-child(2)  { animation-delay: 0.10s; }
-.stagger > *:nth-child(3)  { animation-delay: 0.15s; }
-.stagger > *:nth-child(4)  { animation-delay: 0.20s; }
-.stagger > *:nth-child(5)  { animation-delay: 0.25s; }
-.stagger > *:nth-child(6)  { animation-delay: 0.30s; }
-.stagger > *:nth-child(7)  { animation-delay: 0.35s; }
-.stagger > *:nth-child(8)  { animation-delay: 0.40s; }
-.stagger > *:nth-child(9)  { animation-delay: 0.45s; }
-.stagger > *:nth-child(10) { animation-delay: 0.50s; }
+.stagger>*:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.stagger>*:nth-child(2) {
+  animation-delay: 0.10s;
+}
+
+.stagger>*:nth-child(3) {
+  animation-delay: 0.15s;
+}
+
+.stagger>*:nth-child(4) {
+  animation-delay: 0.20s;
+}
+
+.stagger>*:nth-child(5) {
+  animation-delay: 0.25s;
+}
+
+.stagger>*:nth-child(6) {
+  animation-delay: 0.30s;
+}
+
+.stagger>*:nth-child(7) {
+  animation-delay: 0.35s;
+}
+
+.stagger>*:nth-child(8) {
+  animation-delay: 0.40s;
+}
+
+.stagger>*:nth-child(9) {
+  animation-delay: 0.45s;
+}
+
+.stagger>*:nth-child(10) {
+  animation-delay: 0.50s;
+}
 
 /* Skeleton loading placeholder */
 .skeleton {
-  background: linear-gradient(
-    90deg,
-    var(--bg-surface) 25%,
-    var(--bg-card) 50%,
-    var(--bg-surface) 75%
-  );
+  background: linear-gradient(90deg,
+      var(--bg-surface) 25%,
+      var(--bg-card) 50%,
+      var(--bg-surface) 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite linear;
   border-radius: var(--radius-sm);
@@ -254,20 +298,27 @@ ul, ol {
   justify-content: center;
   padding: 1rem 2.5rem;
   font-size: 1.15rem;
-  background: var(--grad-main); /* Usamos el gradiente que definimos en :root */
+  background: var(--grad-main);
+  /* Usamos el gradiente que definimos en :root */
   color: white;
   font-weight: 600;
-  border-radius: var(--radius); /* Bordes redondeados consistentes */
+  border-radius: var(--radius);
+  /* Bordes redondeados consistentes */
   border: none;
   cursor: pointer;
-  transition: var(--transition); /* ¡Crucial para que el brillo no sea brusco! */
-  box-shadow: 0 4px 15px var(--primary-glow); /* Sombra inicial sutil */
+  transition: var(--transition);
+  /* ¡Crucial para que el brillo no sea brusco! */
+  box-shadow: 0 4px 15px var(--primary-glow);
+  /* Sombra inicial sutil */
 }
 
 .btn-premium:hover {
-  transform: translateY(-2px); /* El botón "salta" hacia el usuario */
-  box-shadow: 0 6px 20px var(--primary-glow); /* La sombra crece y brilla más */
-  filter: brightness(1.05); /* El color se aclara ligeramente */
+  transform: translateY(-2px);
+  /* El botón "salta" hacia el usuario */
+  box-shadow: 0 6px 20px var(--primary-glow);
+  /* La sombra crece y brilla más */
+  filter: brightness(1.05);
+  /* El color se aclara ligeramente */
 }
 
 /* ---------- Botón Outline (Secundario) ---------- */
@@ -290,4 +341,32 @@ ul, ol {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.5);
   transform: translateY(-2px);
+}
+
+/* ============================================================
+   ANIMACIONES GLOBALES (UX)
+============================================================ */
+
+/* Animación de brillo para los Skeleton Loaders */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Clase de utilidad reutilizable */
+.skeleton-base {
+  background: #2a2a2a;
+  background-image: linear-gradient(to right,
+      #2a2a2a 0%,
+      #3a3a3a 20%,
+      #2a2a2a 40%,
+      #2a2a2a 100%);
+  background-repeat: no-repeat;
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite linear forwards;
 }

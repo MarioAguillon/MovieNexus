@@ -4,6 +4,8 @@ import { environment } from '../../../environments/environment';
 import { Movie, MovieResponse } from '../models/movie.model';
 import { CreditsResponse } from '../models/cast.model';
 
+
+
 @Injectable({ providedIn: 'root' })   // Disponible en toda la app
 export class MovieService {
   getMovieCredits(id: string | number) {
@@ -17,6 +19,7 @@ export class MovieService {
     // Retornamos un Observable (una promesa de que llegarán datos)
     return this.http.get<MovieResponse>(
       `${this.apiUrl}/trending/movie/day`
+
     );
   }
 
@@ -29,6 +32,7 @@ export class MovieService {
     });
   }
 
+
   getMovieById(id: string | number) {
     return this.http.get<Movie>(`${this.apiUrl}/movie/${id}`);
   }
@@ -36,8 +40,8 @@ export class MovieService {
   searchMovies(query: string) {
     return this.http.get<MovieResponse>(
       `${this.apiUrl}/search/movie`, {
-        params: { query }
-      });
+      params: { query }
+    });
   }
 
   /**
