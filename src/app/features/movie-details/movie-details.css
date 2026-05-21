@@ -43,6 +43,15 @@
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 }
 
+.poster-img {
+  width: 250px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  margin-bottom: 20px;
+  float: left;
+  margin-right: 30px;
+}
+
 .overview {
   font-size: 1.1rem;
   line-height: 1.8;
