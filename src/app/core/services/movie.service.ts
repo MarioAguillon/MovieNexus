@@ -3,7 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { Movie, MovieResponse } from '../models/movie.model';
 import { CreditsResponse } from '../models/cast.model';
-
+/*  import { delay } from 'rxjs/operators'; */
 
 
 @Injectable({ providedIn: 'root' })   // Disponible en toda la app
@@ -29,7 +29,7 @@ export class MovieService {
   getPopularMovies(page: number = 1) {
     return this.http.get<MovieResponse>(`${this.apiUrl}/movie/popular`, {
       params: { page: page.toString() }
-    });
+    }) /* .pipe(delay(2000)) */;
   }
 
 
