@@ -5,6 +5,7 @@ import { provideClientHydration, withEventReplay } from '@angular/platform-brows
 
 import { routes } from './app.routes';
 import { apiInterceptor } from './core/interceptors/api.interceptor';
+import { errorInterceptor } from './core/interceptors/error.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -13,7 +14,7 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(withEventReplay()),
     provideHttpClient(
       withFetch(),                          // Habilita la API Fetch moderna (más rápida y compatible con SSR)
-      withInterceptors([apiInterceptor])    // Registra nuestro interceptor (Paso 3)
+      withInterceptors([apiInterceptor, errorInterceptor])    // Registra nuestros interceptores
     )
   ]
 };
