@@ -1,4 +1,5 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { ApplicationConfig, isDevMode, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { provideServiceWorker } from '@angular/service-worker';
 import { provideRouter, withComponentInputBinding, withViewTransitions } from '@angular/router';
 import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
@@ -15,6 +16,12 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(
       withFetch(),                          // Habilita la API Fetch moderna (más rápida y compatible con SSR)
       withInterceptors([apiInterceptor, errorInterceptor])    // Registra nuestros interceptores
-    )
+    ),
+    provideClientHydration(withEventReplay()),
+    // NUEVO: Registrar el Service Worker
+    provideServiceWorker('ngsw-config.json', {
+      enabled: !isDevMode(),    // Solo en producción
+      registrationStrategy: 'registerWhenStable:3000'
+    })
   ]
 };
